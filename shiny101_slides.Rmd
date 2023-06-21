@@ -21,7 +21,7 @@ library(dplyr)
 ::: columns-2
 ![](images/Screenshot%202023-06-17%20at%2016.19.46.png){width="491"}
 
--   Data Scientist at cynkra GmbH
+-   Data Scientist at [cynkra GmbH](https://www.cynkra.com/)
 -   University of Zurich (M.SC. Informatics)
 -   Came across R programming in 2018
 -   Joined R-Zurich ladies in December 2022
@@ -32,10 +32,13 @@ library(dplyr)
 
 ## Agenda
 
--   Introduction
+-   Introduction to R shiny
 
-    -   About R shiny
-    -   Structure of a Shiny App
+-   Structure of a Shiny App
+
+-   Creating Shiny files or Folder
+
+-   Run and Stop A Shiny App
 
 -   Code Along
 
@@ -57,7 +60,7 @@ library(dplyr)
 
 -   Seamlessly integrates R ecosystem
 
--   No HTML, CSS and Javascript skils required
+-   No HTML, CSS and Javascript skills required
 
 -   Shiny uses a reactive programming model
 
@@ -114,17 +117,27 @@ library(dplyr)
     server <- ...
     ```
 
-## **Structure of a Shiny App --- Run App**
+## Creating Shiny files or Folder
 
--   Click on `Run App`, if you are using the Rstudio
+-   Manually: Create a directory and add file(s) *➝ `"app.R"`*`, "ui.R", "server.R"`
+-   On Rstudio: Click `File` \> `New Project`, then choose `New Directory` and `Shiny Web Application`
+
+## **Run and Stop A Shiny App**
+
+-   To run a shiny app:
+
+    -   Click on `Run App`, if you are using the Rstudio
 
     ![](images/run-app.png){width="440" height="20"}
 
--   `runApp("app_directory")`
+    -   `runApp("app_directory")`
+    -   `Cmd/Ctrl` + `Shift` + `Enter`
 
--   `Cmd/Ctrl` + `Shift` + `Enter`
+-   To stop a shiny app:
 
--   `shiny::runApp()`
+    -   Click the stop sign icon on the interface of the R console
+    -   Click the console and then select `Esc`
+    -   Close the app window for Shiny
 
 ## Code Along
 
@@ -139,7 +152,9 @@ Time to code along!
     ```{r eval=FALSE, echo=TRUE}
     library(shiny)
     ui <- fluidPage("Hello, world!")
-    server <- function(input, output, session) {}
+    server <- function(input, output, session) {
+      
+    }
     shinyApp(ui = ui, server = server)
     ```
 
@@ -150,6 +165,7 @@ Time to code along!
 -   Find the required folder: `../shiny101/01_shiny_ui_layout`
 
     ```{r, echo=TRUE, eval=FALSE}
+    library(shiny)
     ui <- fluidPage(
       titlePanel("Title"),
       sidebarLayout(
@@ -161,7 +177,7 @@ Time to code along!
     shinyApp(ui = ui, server = server)
     ```
 
-![](images/ui-layout.png){style="margin-left:200px; padding:10px; border: solid 1px gray;" width="401"}
+    ![](images/ui-layout.png){style="margin-left:200px; padding:10px; border: solid 1px gray;" width="293"}
 
 ## Shiny HTML tags
 
@@ -185,8 +201,6 @@ Time to code along!
     ```
 
 ## Shiny app built with Shiny Html Tags
-
--   `../shiny101/02_shiny_html_tags`
 
 ```{r, echo=FALSE}
 library(shiny)
@@ -384,3 +398,7 @@ shinyApp(ui = ui, server = server, options = list(height = 200))
 2.  <https://mastering-shiny.org/index.html>
 
 # Questions?
+
+## Rstudio Tip
+
+-   Create a shiny ""
