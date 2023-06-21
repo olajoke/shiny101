@@ -1,6 +1,6 @@
 # Building Your First Web Apps with R Shiny Workshop
 
-Welcome to the "Building Your First Web Apps with R Shiny" workshop! This workshop will teach participants how to build interactive web applications using R Shiny, a powerful web application framework built on the R programming language.
+Welcome to the "Building Your First Web Apps with R Shiny" workshop! **Designed for R-ladies Zurich June 29,2  2023 workshop.** This workshop will teach participants how to build interactive web applications using R Shiny, a powerful web application framework built on the R programming language.
 
 ## Workshop Description
 
