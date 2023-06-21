@@ -57,7 +57,9 @@ ui <- fluidPage(
 )
 
 # Server logic ----
-server <- function(input, output) {}
+server <- function(input, output) {
+
+}
 
 # Caller App function ---
 shinyApp(ui = ui, server = server)
