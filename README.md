@@ -4,14 +4,14 @@ Welcome to the "Building Your First Web Apps with R Shiny" workshop! This worksh
 
 ## Workshop Description
 
-This workshop will introduce participants to the fundamentals of developing web applications with R Shiny. It is intended for individuals with a basic understanding of R and data analysis who want to develop their own web-based data visualization tools and interactive applications.\
-\
-The workshop will focus on the following subjects:\
-\
-- Overview of R Shiny and its capabilities\
-- Setting up the development ecosystem\
-- Building your first Shiny app\
-- Adding interactivity and visual elements to Shiny applications\
+This workshop will introduce participants to the fundamentals of developing web applications with R Shiny. It is intended for individuals with a basic understanding of R and data analysis who want to develop their own web-based data visualization tools and interactive applications.
+
+The workshop will focus on the following subjects:
+
+- Overview of R Shiny and its capabilities
+- Setting up the development ecosystem
+- Building your first Shiny app
+- Adding interactivity and visual elements to Shiny applications
 - Outline scripts to aid the practical session
 
 ## **Workshop Materials**
