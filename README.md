@@ -20,11 +20,9 @@ In this repository, you will find the following workshop materials:
 
 ### Getting Started
 
-To get started with the workshop, please complete the following steps:\
-\
-Ensure your computer has R and RStudio installed. If not, install and download them from their respective official websites.\
-\
-Clone this repository to your local machine using the following command:
+To get started with the workshop, please complete the following steps:
+- Ensure your computer has R and RStudio installed. If not, install and download them from their respective official websites
+- Clone this repository to your local machine using the following command:
 
 ```{bash}
 
@@ -41,6 +39,6 @@ Consider the following resources to further your exploration and comprehension o
 
 ## License
 
-This workshop content is licensed under the terms of the MIT License. You are free to use, modify, and distribute the materials in accordance with the license terms.
+This workshop content is licensed under the terms of the MIT License. You are free to use, modify, and distribute the materials following the license terms.
 
 We hope you find this workshop useful and enjoy discovering how to create web applications using R Shiny. Happy coding!
