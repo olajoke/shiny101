@@ -1,0 +1,24 @@
+slides > slide {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 26px;
+    color: #89398a;
+}
+
+hgroup h2{
+  background-color: #89398a;
+  color: white;
+}
+
+.title-slide hgroup h1 {
+  background-color: #89398a;
+  font-size: 65px;
+  line-height: 1.4;
+  letter-spacing: -3px;
+  color: white;
+}
+
+.title-slide hgroup p {
+    color: #89398a;
+}
+
+
