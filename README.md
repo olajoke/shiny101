@@ -39,6 +39,5 @@ Consider the following resources to further your exploration and comprehension o
 
 This workshop content is licensed under the terms of the MIT License. You are free to use, modify, and distribute the materials following the license terms.
 
-::: {style="color:darkgreen;"}
-***We hope you find this workshop useful and enjoy discovering how to create web applications using R Shiny. Happy coding!***
-:::
+
+<span style="color: green;">***We hope you find this workshop useful and enjoy discovering how to create web applications using R Shiny. Happy coding!***</span>
