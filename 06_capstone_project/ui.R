@@ -83,7 +83,7 @@ ui <- navbarPage(
         ),
         br(),
         br(),
-        shinyjs::disabled( # This disables the button
+        shinyjs::disabled( # This disables the button --> remove `shinyjs::disabled()` wrapper and activate `eventReactive()`
           actionButton(inputId = "get_insight", "Click to Get Insight", class = "btn btn-primary btn-lg btn-block")
           )
       ),
@@ -105,6 +105,9 @@ ui <- navbarPage(
           ),
         hr(),
         dataTableOutput("filtered_table")
+        ####################################
+        ## Please do not uncomment yet!  ##
+        ###################################
         #
         # tabsetPanel(
         #   tabPanel(

@@ -24,18 +24,22 @@ server <- function(input, output) {
   # Explore Page
   #-------------------------
 
-  # Create a reactive data
+  # Create a reactive data.
+  # To see, how eventReactive() works,
+  # replace `reactive({` with `eventReactive(input$get_insight,{`
+  # then remove `shinyjs::disabled()` function wrapper from the `actionButton(inputId = "get_insight", ...)` in the UI definition
+  # then run app!
   filter_data <- reactive({ # eventReactive(input$get_insight,{
-    # salary
     input_03 <- lapply(input$i_slider_textinput, comma_removr) %>% as.integer()
+
     # Apply filter function
     filter_df(data,
       input_01 = input$i_slider, # age
-      input_02 = input$i_numeric_range, # years of exeperience
+      input_02 = input$i_numeric_range, # years of experience
       input_03 = input_03, # salary
-      input_04 = input$i_checkbox,
-      input_05 = input$i_checkbox_btn,
-      input_06 = input$i_picker
+      input_04 = input$i_checkbox, # gender
+      input_05 = input$i_checkbox_btn, # education_level
+      input_06 = input$i_picker # job_title
     )
   })
 
