@@ -1,11 +1,3 @@
-library(shiny)
-library(shinythemes)
-library(shinyWidgets)
-library(dplyr)
-library(ggplot2)
-library(DT)
-library(plotly)
-
 source("helper.R")
 
 # UI layout with navbarPage()
@@ -13,13 +5,14 @@ ui <- navbarPage(
   title = "Data Exploration App",
   theme = shinytheme("flatly"),
   includeCSS("www/style.css"),
+  shinyjs::useShinyjs(),
 
   # First tab on the navbarPage
   navbarMenu(
     "Data Overview",
     icon = icon("list-alt"),
     tabPanel("Table", icon = icon("table"), dataTableOutput("table")),
-    tabPanel("Trend", icon = icon("arrow-trend-up"), plotlyOutput("plot1")),
+    tabPanel("Trend", icon = icon("arrow-trend-up"), plotlyOutput("plot1", height = 700)),
     tabPanel("Summary", icon = icon("info"), h4("Data Summary:"), verbatimTextOutput("summary"))
   ),
 
@@ -90,37 +83,43 @@ ui <- navbarPage(
         ),
         br(),
         br(),
-        actionButton(inputId = "get_insight", "Click to Get Insight", class = "btn btn-primary btn-lg btn-block")
+        shinyjs::disabled( # This disables the button
+          actionButton(inputId = "get_insight", "Click to Get Insight", class = "btn btn-primary btn-lg btn-block")
+          )
       ),
       # Define Output elements on the mainPanel
       mainPanel(
-        h3("Data Insight :"),
         fluidRow(
-          column(6, echarts4rOutput("Plot_01")),
-          column(6, echarts4rOutput("Plot_03"))
+          column(6,
+                 echarts4rOutput("Plot_01", height = 300)
+                 ),
+          column(6,
+                 echarts4rOutput("Plot_03", height = 300)
+                 )
         ),
         hr(),
         fluidRow(
-          column(12, plotOutput("Plot_02"))
-        ),
+          column(12,
+                 plotlyOutput("Plot_02", height = "100%"),
+                 style = "height:550px")
+          ),
         hr(),
         dataTableOutput("filtered_table")
         #
         # tabsetPanel(
         #   tabPanel(
-        #     "subtab 1",
-        #     h3("Data Insight :"),
+        #     "Plots",
         #     fluidRow(
         #       column(6, echarts4rOutput("Plot_01")),
         #       column(6, echarts4rOutput("Plot_03"))
         #     ),
         #     hr(),
         #     fluidRow(
-        #       column(12, plotOutput("Plot_02"))
+        #       column(12, plotlyOutput("Plot_02"))
         #     )
         #   ),
         #   tabPanel(
-        #     "subtab 1",
+        #     "Table",
         #     dataTableOutput("filtered_table")
         #   )
         # )

@@ -25,7 +25,7 @@ server <- function(input, output) {
   #-------------------------
 
   # Create a reactive data
-  filter_data <- reactive({
+  filter_data <- reactive({ # eventReactive(input$get_insight,{
     # salary
     input_03 <- lapply(input$i_slider_textinput, comma_removr) %>% as.integer()
     # Apply filter function
@@ -74,7 +74,7 @@ server <- function(input, output) {
   })
 
   # Plot_02
-  output$Plot_02 <- renderPlot({
+  output$Plot_02 <- renderPlotly({
     build_column_chart(
       filter_data(),
       "job_title",

@@ -1,22 +1,45 @@
-# Install and Load package function
+## Install and load Required Packages
+## -------------------------------------
+install_n_load <- function(pkg) {
+  new_pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+  if (length(new_pkg)) install.packages(new_pkg, dependencies = TRUE)
+  sapply(pkg, require, character.only = TRUE)
+}
 
+# Install and load listed packages
+## -------------------------------------
+packages <- c(
+  "shiny",
+  "shinythemes",
+  "shinyWidgets",
+  "ggplot2",
+  "plotly",
+  "dplyr",
+  "DT",
+  "echarts4r"
+)
+install_n_load(packages)
 
 
 # load dataset
+## -------------------------------------
 data <- readRDS("data/salary_data.rds") %>% na.omit()
 
 # A lookup table with key-value pairs --- Education Level
+## -------------------------------------
 lookup_table <- data.frame(
   key = c("Bachelor's", "PhD", "Master's"),
   value = c("Bachelor", "PhD", "Master")
 )
 
 # Remove commas from formatted numeric values e.g. "4,000" --> "4000"
+## -------------------------------------
 comma_removr <- function(val) {
   stringr::str_remove(val, ",")
 }
 
 # Filter function
+## -------------------------------------
 filter_df <- function(
     data,
     input_01 = c(23, 53), # age
@@ -39,11 +62,11 @@ filter_df <- function(
   }
 
   if (!is.null(input_05)) {
-    data <- data %>% filter(education_level %in% input_05) # Only run if parameter is not NULL
+    data <- data %>% filter(education_level %in% input_05)
   }
 
   if (!is.null(input_06)) {
-    data <- data %>% filter(job_title %in% input_06) # Only run if parameter is not NULL
+    data <- data %>% filter(job_title %in% input_06)
   }
   # Return the data
   data
@@ -51,6 +74,7 @@ filter_df <- function(
 
 
 # Build a scatter plot with plotly
+## -------------------------------------
 build_scatter_plot <- function(data) {
   # Create the Plotly plot
   plot <- plot_ly(data, x = ~age, y = ~salary, color = ~education_level, type = "scatter", mode = "markers") %>%
@@ -65,6 +89,7 @@ build_scatter_plot <- function(data) {
 
 
 # Build count data function
+## -------------------------------------
 build_count_data <- function(data, col) {
   # Validate Params
   stopifnot(col %in% colnames(data))
@@ -81,13 +106,14 @@ build_count_data <- function(data, col) {
 }
 
 # build donut chart using echarts4r
+## -------------------------------------
 build_donut_chart <- function(data, col = NULL, title = "Title") {
   data <- build_count_data(data, col)
   chart <-
     data %>%
     mutate(percentage = percentage * 100) %>%
     rename("col" = all_of(col)) %>%
-    e_charts(col, height = "50%") %>%
+    e_charts(col) %>%
     e_theme("westeros") %>%
     e_pie(percentage, radius = c("50%", "70%")) %>%
     e_legend(show = FALSE) %>%
@@ -104,6 +130,7 @@ build_donut_chart <- function(data, col = NULL, title = "Title") {
 
 
 # Build a color palette for ggplot
+## -------------------------------------
 gg_colors <- function(x = 10) {
   palette <- c("#357560", "#009E73", "#D8D093", "#0072B2", "#56B4E9")
   color_palette <- colorRampPalette(palette)
@@ -112,28 +139,28 @@ gg_colors <- function(x = 10) {
 }
 
 # Build column chart with ggplot2
+## -------------------------------------
 build_column_chart <- function(data, col, x_label = "X Label", title = "Top Most Common Occupation") {
   data <- build_count_data(data, col) %>% head(10)
   colors <- gg_colors(nrow(data))
 
   # Create Plot
-  plot <- ggplot(data, aes(x = reorder(data[[col]], -Value), y = Value, fill = data[[col]])) +
-    geom_bar(stat = "identity") +
+  plot <- ggplot(data, aes(x = reorder(.data[[col]], -Value), y = Value, fill = .data[[col]])) +
+    geom_col() +
     scale_fill_manual(values = colors) +
-    labs(x = x_label, y = "Count", fill = col) +
+    labs(x = x_label, y = "Count", fill = "Job title") +
     ggtitle(title) +
-    theme_minimal() +
     theme_minimal() +
     theme(
       panel.background = element_rect(fill = "white", color = NA),
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank(),
       axis.line = element_blank(),
-      axis.text = element_text(color = "black"),
-      plot.title = element_text(color = "black")
+      axis.text = element_text(color = "gray9"),
+      plot.title = element_text(color = "#357560", size = 20)
     ) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
 
   # Return Plot
-  plot
+  ggplotly(plot, tooltip = c("fill", "y"))
 }
