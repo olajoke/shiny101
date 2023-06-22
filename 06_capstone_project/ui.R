@@ -85,24 +85,27 @@ ui <- navbarPage(
         br(),
         shinyjs::disabled( # This disables the button --> remove `shinyjs::disabled()` wrapper and activate `eventReactive()`
           actionButton(inputId = "get_insight", "Click to Get Insight", class = "btn btn-primary btn-lg btn-block")
-          )
+        )
       ),
       # Define Output elements on the mainPanel
       mainPanel(
         fluidRow(
-          column(6,
-                 echarts4rOutput("Plot_01", height = 300)
-                 ),
-          column(6,
-                 echarts4rOutput("Plot_03", height = 300)
-                 )
+          column(
+            6,
+            echarts4rOutput("Plot_01", height = 300)
+          ),
+          column(
+            6,
+            echarts4rOutput("Plot_03", height = 300)
+          )
         ),
         hr(),
         fluidRow(
           column(12,
-                 plotlyOutput("Plot_02", height = "100%"),
-                 style = "height:550px")
-          ),
+            plotlyOutput("Plot_02", height = "100%"),
+            style = "height:550px"
+          )
+        ),
         hr(),
         dataTableOutput("filtered_table")
         ####################################
