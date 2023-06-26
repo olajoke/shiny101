@@ -22,7 +22,7 @@ ui <- navbarPage(
     # Tab structured with a sidebar Layout
     sidebarLayout(
       # Define Input Widgets on the sidebar
-      sidebarPanel(
+      sidebarPanel( class = "sidebar",
         h4("Select Options to Filter"),
         br(),
         sliderInput(
