@@ -1,6 +1,6 @@
 # Building Your First Web Apps with R Shiny Workshop
 
-Welcome to the "Building Your First Web Apps with R Shiny" workshop! **Designed for R-ladies Zurich June 29,2  2023 workshop.** This workshop will teach participants how to build interactive web applications using R Shiny, a powerful web application framework built on the R programming language.
+Welcome to the "Building Your First Web Apps with R Shiny" workshop! **Designed for the R-ladies Zurich Meetup event on June 29, 2023.** This workshop will teach participants how to build interactive web applications using R Shiny, a powerful web application framework built on the R programming language.
 
 ## Workshop Description
 
@@ -17,20 +17,19 @@ The workshop will focus on the following subjects:
 ## **Workshop Materials**
 
 In this repository, you will find the following workshop materials:
-- shiny101_slides.Rmd: The main presentation slides
-- 00_hell0_world: The first code-along material to build your first shiny app called 'Hello World'
-- 01_shiny_ui_layout: A code-along directory where you find an `app.R`  file that shows the most common Shiny layout
-- 02_shiny_html_tags: This directory shows how Shiny HTML tags can be used to build an app
-- 03_add_controls: In this directory, some UI input widgets and output elements are illustrated
-- 04_adding_behaviour: This directory adds reactivity to the UI objects mentioned in `03_add_controls`
-- 05_mini_project: A simple but complete Shiny app called the "Survey App"
-- 06_capstone_project: A more comprehensive app 'Data exploration App' which includes all that has been described so far. 
+
+-    shiny101_slides.Rmd: The main presentation slides
+-   00_hell0_world: The first code-along material to build your first shiny app called 'Hello World'
+-   01_shiny_ui_layout: A code-along directory where you find an `app.R` file that shows the most common
+-   Shiny layout - 02_shiny_html_tags: This directory shows how Shiny HTML tags can be used to build an app
+-   03_add_controls: In this directory, some UI input widgets and output elements are illustrated
+-   04_adding_behaviour: This directory adds reactivity to the UI objects mentioned in `03_add_controls`
+-   05_mini_project: A simple but complete Shiny app called the "Survey App"
+-   06_capstone_project: A more comprehensive app 'Data exploration App' which includes all that has been described so far.
 
 ### Getting Started
 
-To get started with the workshop, please complete the following steps: 
-- Ensure your computer has R and RStudio installed. If not, install and download them from their respective official websites
-- Download all files, and open the [.RProj]() in RStudio.
+To get started with the workshop, please complete the following steps: - Ensure your computer has R and RStudio installed. If not, install and download them from their respective official websites - Download all files, and open the [.RProj]() in RStudio.
 
 ## Additional Resources
 
@@ -44,6 +43,5 @@ Please take a look at the following resources to further your exploration and co
 ## License
 
 This workshop content is licensed under the terms of the MIT License. You can use, modify, and distribute the materials following the license terms.
-
 
 ***We hope you find this workshop useful and enjoy discovering how to create web applications using R Shiny. Happy coding!***
