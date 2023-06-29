@@ -21,14 +21,14 @@ library(dplyr)
 ::: columns-2
 ![](images/Screenshot%202023-06-17%20at%2016.19.46.png){width="491"}
 
--   Data Scientist at [cynkra GmbH](https://www.cynkra.com/)
 -   University of Zurich (M.SC. Informatics)
--   Came across R programming in 2018
--   Joined R-Zurich ladies in December 2022
+-   Came across R programming language in 2018
+-   Joined R-Ladies Zurich in December 2022
+-   Data Scientist at [cynkra GmbH](https://www.cynkra.com/)
 -   First shiny app : [The sleepy app](https://drive.google.com/file/d/1KWCVkmNxDeOr36V7CBWDMgWKvtIV3qau/view)
 :::
 
-## Ice breaker Questions
+# Ice breaker Questions
 
 ## Agenda
 
@@ -320,7 +320,7 @@ tags$div(
 
 ## Adding Behaviour
 
--   Shiny uses reactive programming to create interactivity
+-   Shiny uses reactive programming to create interactivity e.g., `observeEvent()`, `reactive()`
 
 -   Informs shiny server how to process information received from the UI `(NB: Informs not order)`
 
@@ -380,11 +380,11 @@ shinyApp(ui = ui, server = server, options = list(height = 200))
 
 ## More on Shiny
 
--   Enchancing your app
+-   Enhancing your app
     -   Build your with HTML and customize appearance with CSS
-    -   Enhance interactivity and feedback --- `{shinyjs},{shinyFeedback},{shinycssloader}`
+    -   Enhance interactivity and feedback --- `{shinyjs}, {shinyFeedback}, {shinycssloaders}`
 -   Deployment: `shiny.io, Posit Connect, Heroku, Azure, Google Cloud Platform (GCP)` et.c.
--   Improve performance: consider separate logic, `shiny module`, bookmarking e.t.c.
+-   Improve performance: consider separating logic, shiny module e.t.c.
 -   Tests: `{testthat}, {shinytest2}`
 -   Learn more about Shiny:
     -   [Shiny Cheat Sheet](https://shiny.posit.co/r/articles/start/cheatsheet/)
@@ -401,4 +401,6 @@ shinyApp(ui = ui, server = server, options = list(height = 200))
 
 ## Rstudio Tip
 
--   Create a shiny ""
+-   Add shiny app boilerplate by typing \"shinyapp\" and pressing `Enter/return` or `Shift+Tab`.
+
+-   Add a function boilerpater by typing "fun" and pressing `Enter/return` or `Shift+Tab`.

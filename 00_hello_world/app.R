@@ -3,7 +3,15 @@
 library(shiny)
 
 # Define UI ---
-ui <- fluidPage("Hello, World!")
+ui <- fluidPage(
+  h1("hello world"),
+  h2("hello world"),
+  h3("hello world"),
+  h4("hello world"),
+  h5("hello world"),
+  h6("hello world"),
+  "Hello, World!",
+  )
 
 # Server logic ---
 server <- function(input, output, session) {
